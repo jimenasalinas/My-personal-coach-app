@@ -14,6 +14,11 @@
 #  user_id         :integer
 #
 class Goal < ApplicationRecord
+<<<<<<< HEAD
   # belongs_to :user, counter_cache: true
   # has_many  :workouts, dependent: :nullify
+=======
+  belongs_to :user, counter_cache: true
+  has_many  :workouts, dependent: :nullify
+>>>>>>> refs/remotes/origin/main
 end
