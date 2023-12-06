@@ -6,7 +6,6 @@
 //
 // Scripts
 // 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -50,5 +49,9 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+
+    // Update image paths
+    const imagePath = '<%= asset_path "demo-image-01.jpg" %>';
+    // Update other image paths as needed
 
 });
