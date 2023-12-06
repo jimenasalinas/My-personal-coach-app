@@ -1,0 +1,182 @@
+<div>
+  <div>
+    <h1>
+      List of all goals
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new goal
+    </h2>
+
+    <form action="/insert_goal" method="post">
+      <div>
+        <label for="goal_box">
+          Goal
+        </label>
+
+        <textarea id="goal_box" name="query_goal" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="goal_due_date_box">
+          Goal due date
+        </label>
+
+        <input type="date" id="goal_due_date_box" name="query_goal_due_date">
+      </div>
+
+      <div>
+        <label for="goal_status_box">
+          Goal status
+        </label>
+
+        <input type="text" id="goal_status_box" name="query_goal_status">
+      </div>
+
+      <div>
+        <label for="main_goal_sport_box">
+          Main goal sport
+        </label>
+
+        <input type="text" id="main_goal_sport_box" name="query_main_goal_sport">
+      </div>
+
+      <div>
+        <label for="goal_outcome_box">
+          Goal outcome
+        </label>
+
+        <input type="text" id="goal_outcome_box" name="query_goal_outcome">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="workouts_count_box">
+          Workouts count
+        </label>
+
+        <input type="text" id="workouts_count_box" name="query_workouts_count">
+      </div>
+
+      <button>
+        Create goal
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Goal
+        </th>
+
+        <th>
+          Goal due date
+        </th>
+
+        <th>
+          Goal status
+        </th>
+
+        <th>
+          Main goal sport
+        </th>
+
+        <th>
+          Goal outcome
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Workouts count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_goals.each do |a_goal| %>
+      <tr>
+        <td>
+          <%= a_goal.id %>
+        </td>
+
+        <td>
+          <%= a_goal.goal %>
+        </td>
+
+        <td>
+          <%= a_goal.goal_due_date %>
+        </td>
+
+        <td>
+          <%= a_goal.goal_status %>
+        </td>
+
+        <td>
+          <%= a_goal.main_goal_sport %>
+        </td>
+
+        <td>
+          <%= a_goal.goal_outcome %>
+        </td>
+
+        <td>
+          <%= a_goal.user_id %>
+        </td>
+
+        <td>
+          <%= a_goal.workouts_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_goal.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_goal.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/goals/<%= a_goal.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
