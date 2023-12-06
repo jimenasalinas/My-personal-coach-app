@@ -11013,6 +11013,8 @@ body {
     border-bottom: none;
     background-color: transparent;
     transition: background-color 0.3s ease-in-out;
+    padding-right: 15px; /* Adjust as needed */
+    padding-left: 15px;  /* Adjust as needed */
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
@@ -11022,6 +11024,8 @@ body {
     transition: none;
     padding: 2rem 1.5rem;
     color: rgba(255, 255, 255, 0.5);
+    padding-right: 15px; /* Adjust as needed */
+    padding-left: 15px;  /* Adjust as needed */
   }
   #mainNav .nav-link:hover {
     color: rgba(255, 255, 255, 0.75);

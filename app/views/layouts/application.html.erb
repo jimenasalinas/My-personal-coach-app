@@ -11,7 +11,8 @@
 
   <style>
     body {
-      padding-left: 20px; 
+      padding-left: 25px; 
+      padding-right: 25px; 
     }
   </style>
 
@@ -22,20 +23,20 @@
 
 <body>
 
-  <nav>
-    <a href="/">My Personal Goals</a>
+
+<div class="navbar">
+    <a href="/" class="navbar-brand">My PersonAI Coach</a>
 
     <% if current_user != nil %>
-      <a href="/users/sign_out">Sign out</a>
-      <a href="/users/edit">Edit profile</a>
+        <a href="/users/sign_out" class="nav-link">Sign out</a>
+        <a href="/users/edit" class="nav-link">Edit profile</a>
     <% else %>
-      <a href="/users/sign_up">Sign up</a>
-      <a href="/users/sign_in">Sign in</a>
+        <a href="/users/sign_up" class="nav-link">Sign up</a>
+        <a href="/users/sign_in" class="nav-link">Sign in</a>
     <% end %>
+</div>
 
-  </nav>
 
-  <hr>
 
   <% if notice.present? %>
     <div style="color: green">
