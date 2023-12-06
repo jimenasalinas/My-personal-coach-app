@@ -14,4 +14,6 @@
 #  user_id         :integer
 #
 class Goal < ApplicationRecord
+  # belongs_to :user, counter_cache: true
+  # has_many  :workouts, dependent: :nullify
 end
