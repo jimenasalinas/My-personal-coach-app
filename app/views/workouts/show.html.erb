@@ -1,0 +1,206 @@
+<div>
+  <div>
+    <h1>
+      Workout #<%= @the_workout.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/workouts">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_workout/<%= @the_workout.id %>">
+          Delete workout
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Workout date
+      </dt>
+      <dd>
+        <%= @the_workout.workout_date %>
+      </dd>
+
+      <dt>
+        Duration minutes
+      </dt>
+      <dd>
+        <%= @the_workout.duration_minutes %>
+      </dd>
+
+      <dt>
+        Equipment
+      </dt>
+      <dd>
+        <%= @the_workout.equipment %>
+      </dd>
+
+      <dt>
+        Assignment
+      </dt>
+      <dd>
+        <%= @the_workout.assignment %>
+      </dd>
+
+      <dt>
+        Workout sport
+      </dt>
+      <dd>
+        <%= @the_workout.workout_sport %>
+      </dd>
+
+      <dt>
+        Workout intensity
+      </dt>
+      <dd>
+        <%= @the_workout.workout_intensity %>
+      </dd>
+
+      <dt>
+        Completion status
+      </dt>
+      <dd>
+        <%= @the_workout.completion_status %>
+      </dd>
+
+      <dt>
+        Workout feelings
+      </dt>
+      <dd>
+        <%= @the_workout.workout_feelings %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_workout.user_id %>
+      </dd>
+
+      <dt>
+        Goal
+      </dt>
+      <dd>
+        <%= @the_workout.goal_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_workout.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_workout.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit workout
+    </h2>
+
+    <form action="/modify_workout/<%= @the_workout.id %>"  method="post" >
+      <div>
+        <label for="workout_date_box">
+          Workout date
+        </label>
+
+        <input type="date" id="workout_date_box" name="query_workout_date" value="<%= @the_workout.workout_date %>">
+      </div>
+
+      <div>
+        <label for="duration_minutes_box">
+          Duration minutes
+        </label>
+
+        <input type="text" id="duration_minutes_box" name="query_duration_minutes" value="<%= @the_workout.duration_minutes %>">
+      </div>
+
+      <div>
+        <label for="equipment_box">
+          Equipment
+        </label>
+
+        <input type="text" id="equipment_box" name="query_equipment" value="<%= @the_workout.equipment %>">
+      </div>
+
+      <div>
+        <label for="assignment_box">
+          Assignment
+        </label>
+
+        <textarea id="assignment_box" name="query_assignment"><%= @the_workout.assignment %></textarea>
+      </div>
+
+      <div>
+        <label for="workout_sport_box">
+          Workout sport
+        </label>
+
+        <input type="text" id="workout_sport_box" name="query_workout_sport" value="<%= @the_workout.workout_sport %>">
+      </div>
+
+      <div>
+        <label for="workout_intensity_box">
+          Workout intensity
+        </label>
+
+        <input type="text" id="workout_intensity_box" name="query_workout_intensity" value="<%= @the_workout.workout_intensity %>">
+      </div>
+
+      <div>
+        <label for="completion_status_box">
+          Completion status
+        </label>
+
+        <input type="text" id="completion_status_box" name="query_completion_status" value="<%= @the_workout.completion_status %>">
+      </div>
+
+      <div>
+        <label for="workout_feelings_box">
+          Workout feelings
+        </label>
+
+        <input type="text" id="workout_feelings_box" name="query_workout_feelings" value="<%= @the_workout.workout_feelings %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_workout.user_id %>">
+      </div>
+
+      <div>
+        <label for="goal_id_box">
+          Goal
+        </label>
+
+        <input type="text" id="goal_id_box" name="query_goal_id" value="<%= @the_workout.goal_id %>">
+      </div>
+
+      <button>
+        Update workout
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
