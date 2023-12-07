@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # Routes for the Goal resource:
 
+  # landing page
+  # READ
+  get("/dashboard", { :controller => "dashboard", :action => "index" })
+
   # CREATE
   post("/insert_goal", { :controller => "goals", :action => "create" })
           
