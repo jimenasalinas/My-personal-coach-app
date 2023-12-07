@@ -1,3 +1,16 @@
+<style >
+  body {
+    background-image: url('<%= asset_path("main_picture.webp") %>');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Set to the desired height */
+
+  }
+
+</style >
+
+<div class="col-lg-8" style="padding: 15px;">
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -7,10 +20,16 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+</div>
 
+<div>
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Reset Password" , class: "btn btn-pwd"%>
   </div>
+</div>
+
 <% end %>
 
+<div class="col-lg-8" style="padding: 15px;">
 <%= render "devise/shared/links" %>
+</div>
