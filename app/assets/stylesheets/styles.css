@@ -11,8 +11,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
  .custom-field {
-  padding-top: 10px; /* Adjust the top padding as needed */
-  padding-bottom: 10px; /* Adjust the bottom padding as needed */
+  padding-top: 20px; /* Adjust the top padding as needed */
+  padding-bottom: 20px; /* Adjust the bottom padding as needed */
 }
 
 .center-text {
