@@ -15,6 +15,7 @@
 
 <div>
   <div>
+      <% if @the_goal.present? %>
     <h1>
       Goal #<%= @the_goal.id %> details
     </h1>
@@ -97,6 +98,7 @@
         <%= time_ago_in_words(@the_goal.updated_at) %> ago
       </dd>
     </dl>
+
   </div>
 </div>
 
@@ -172,7 +174,10 @@
         Update goal
       </button>
       </div>
-
+    <% else %>
+      <p style="color: #64a19d;">No goals available</p>
+    <% end %>
+    
     </form>
   </div>
 </div>

@@ -61,7 +61,7 @@
                     <p style="color: #64a19d; font-size: 26px;"><%= @most_recent_goal %></p>
                     <!-- Add more details as needed -->
                   <% else %>
-                    <p style="color: #64a19d; font-size: 26px;">Set a goal</p>
+                    <a href="/goals" class="nav-link" style="color: #64a19d; font-size: 26px;">Set a goal!</a>
                   <% end %>
               </div>
             </div>
@@ -88,6 +88,14 @@
               <div class="card-body text-center">
                 <h4 class="text-uppercase m-0">Days till my goal:</h4>
                 <hr class="my-4 mx-auto" style="color: #64a19d;">
+
+                    <% if @most_recent_due_date %>
+                    <p style="color: #64a19d; font-size: 26px;"><%= @days_till_goal %></p>
+                    <!-- Add more details as needed -->
+                  <% else %>
+                    <a href="/goals" class="nav-link" style="color: #64a19d; font-size: 26px;">Set a goal!</a>
+                  <% end %>
+
               </div>
             </div>
 
