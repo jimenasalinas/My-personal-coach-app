@@ -22,6 +22,11 @@
 }
 
 
+.small-text {
+  display: block; /* one line */
+  font-size: 12px; /* font size  */
+  white-space: nowrap;
+}
 
 
 :root {
