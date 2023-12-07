@@ -22,6 +22,8 @@
     <a href="/" class="navbar-brand">My PersonAI Coach</a>
 
     <% if current_user != nil %>
+        <a href="/goals" class="nav-link">My goals</a>
+        <a href="/workouts" class="nav-link">My workouts</a>
         <a href="/users/sign_out" class="nav-link">Sign out</a>
         <a href="/users/edit" class="nav-link">Edit profile</a>
     <% else %>
