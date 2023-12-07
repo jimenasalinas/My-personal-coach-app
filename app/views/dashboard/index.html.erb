@@ -55,6 +55,14 @@
               <div class="card-body text-center">
                 <h4 class="text-uppercase m-0">My Current Goal:</h4>
                 <hr class="my-4 mx-auto" style="color: #64a19d;">
+              
+              <!--display most recent goal-->
+                    <% if @most_recent_goal %>
+                    <p><%= @most_recent_goal %></p>
+                    <!-- Add more details as needed -->
+                  <% else %>
+                    <p>Set a goal</p>
+                  <% end %>
               </div>
             </div>
 
