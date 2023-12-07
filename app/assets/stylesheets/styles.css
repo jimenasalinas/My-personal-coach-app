@@ -2890,6 +2890,7 @@ textarea.form-control-lg {
   height: 20px; 
   line-height: 6px; 
   text-align: center; 
+  white-space: nowrap;
 }
 
 
@@ -2933,8 +2934,8 @@ textarea.form-control-lg {
   width: 200px; 
   height: 20px; 
   line-height: 6px; 
-  text-align: left; 
-
+  text-align: center; 
+  white-space: nowrap;
 
 }
 
