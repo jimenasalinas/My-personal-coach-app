@@ -1,4 +1,4 @@
-<style>
+<style >
   body {
     background-image: url('<%= asset_path("main_picture.webp") %>');
     background-size: cover;
@@ -6,12 +6,11 @@
     background-repeat: no-repeat;
     height: 100vh; /* Set to the desired height */
 
-
   }
 
-</style>
+</style >
 
-
+<div class="col-lg-8" style="padding: 15px;">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -35,6 +34,7 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>
