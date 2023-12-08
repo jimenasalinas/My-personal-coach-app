@@ -84,66 +84,74 @@
             </div>
 
 <!--          equipment field, based on previous field-->
-
-        <!-- Equipment dropdown based on the selected sport -->
-        <div class="row" style="padding-bottom: 20px;">
-          <div class="col">
-            <label for="equipment_box">Select special equipment/conditions:</label>
-            <select id="equipment_box" name="query_equipment[]" class="form-control" multiple>
-              <!-- Default option -->
-              <option value="default">Default</option>
-            </select>
+      <!-- Equipment checkboxes based on the selected sport -->
+      <div class="row" style="padding-bottom: 20px;">
+        <div class="col">
+          <label for="equipment_box">Select special equipment/conditions:</label>
+          <div style="margin-left: 20px;">
+            <!-- Default option -->
+            <input type="checkbox" id="default_checkbox" name="query_equipment[]" value="default" checked>
+            <label for="default_checkbox">Default</label>
           </div>
+
+          <!-- Additional options based on the selected sport -->
+          <div id="additional_options" style="margin-left: 20px;"></div>
         </div>
+      </div>
 
-        <script>
-          document.getElementById('workout_sport_box').addEventListener('change', function () {
-            updateEquipmentOptions();
-          });
+      <script>
+        document.getElementById('workout_sport_box').addEventListener('change', function () {
+          updateEquipmentOptions();
+        });
 
-          function updateEquipmentOptions() {
-            var sportSelect = document.getElementById('workout_sport_box');
-            var equipmentSelect = document.getElementById('equipment_box');
+        function updateEquipmentOptions() {
+          var sportSelect = document.getElementById('workout_sport_box');
+          var additionalOptionsDiv = document.getElementById('additional_options');
 
-            // Reset options
-            equipmentSelect.innerHTML = '<option value="default">Default</option>';
+          // Clear previous options
+          additionalOptionsDiv.innerHTML = '';
 
-            // Define options based on the selected sport
-            var sport = sportSelect.value;
-            var selectedOptions = [];
+          // Define options based on the selected sport
+          var sport = sportSelect.value;
 
-            if (sport === 'Swimming') {
-              addOption(equipmentSelect, 'Fins');
-              addOption(equipmentSelect, 'Paddles');
-              addOption(equipmentSelect, 'Kick board');
-              addOption(equipmentSelect, 'Pull buoy');
-            } else if (sport === 'Cycling') {
-              addOption(equipmentSelect, 'Hills in my area');
-              addOption(equipmentSelect, 'Flat roads');
-            } else if (sport === 'Running') {
-              addOption(equipmentSelect, 'Hills in my area');
-              addOption(equipmentSelect, 'Flat roads');
-            } else if (sport === 'Triathlon') {
-              addOption(equipmentSelect, 'Bike');
-              addOption(equipmentSelect, 'Running shoes');
-              addOption(equipmentSelect, 'Swimming equipment');
-            }
-
-            function addOption(selectElement, optionText) {
-              var option = document.createElement('option');
-              option.value = optionText.toLowerCase();
-              option.text = optionText;
-              selectElement.add(option);
-            }
-
-            // Add an event listener to handle selection changes
-            equipmentSelect.addEventListener('change', function () {
-              selectedOptions = Array.from(equipmentSelect.selectedOptions, option => option.value);
-              // Join selected options into a string and update the query parameter
-              document.querySelector('input[name="query_equipment"]').value = selectedOptions.join('+');
-            });
+          if (sport === 'Swimming') {
+            addCheckbox('Fins');
+            addCheckbox('Paddles');
+            addCheckbox('Kick board');
+            addCheckbox('Pull buoy');
+          } else if (sport === 'Cycling') {
+            addCheckbox('Hills in my area');
+            addCheckbox('Flat roads');
+          } else if (sport === 'Running') {
+            addCheckbox('Hills in my area');
+            addCheckbox('Flat roads');
+          } else if (sport === 'Triathlon') {
+            addCheckbox('Bike');
+            addCheckbox('Running shoes');
+            addCheckbox('Swimming equipment');
           }
-        </script>
+
+          function addCheckbox(optionText) {
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'query_equipment[]';
+            checkbox.value = optionText.toLowerCase();
+
+            if (checkbox.value === 'default') {
+              checkbox.checked = true;
+              checkbox.disabled = true; // Disable the checkbox so the user can't uncheck it
+            }
+
+            var label = document.createElement('label');
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(optionText));
+
+            additionalOptionsDiv.appendChild(label);
+            additionalOptionsDiv.appendChild(document.createElement('br'));
+          }
+        }
+      </script>
+
 
 
       <div class="row" style="padding-bottom: 20px;">
