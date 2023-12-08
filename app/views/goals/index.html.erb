@@ -10,90 +10,99 @@
 
 </style >
 
-
+<body>
 
 <div>
-  <div >
+  <div class= "text-center" style="padding-bottom: 20px;">
     <h1>
       My Fitness Goals
     </h1>
   </div>
 </div>
 
-<hr>
 
-<div>
-  <div>
-    <h2>
-      Add a new goal
-    </h2>
+ <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card py-4 h-100">
+        <div class="card-body text-center">
+          <h2>Add a new goal</h2>
+          <form action="/insert_goal" method="post">
+            <div class="row">
+              <div class="col">
+                <label for="goal_box">Goal</label>
+                <textarea id="goal_box" name="query_goal" rows="3" class="form-control"></textarea>
+              </div>
+            </div>
 
-    <form action="/insert_goal" method="post">
-      <div>
-        <label for="goal_box">
-          Goal
-        </label>
+            <div class="row">
+              <div class="col">
+                <label for="goal_due_date_box">Goal due date</label>
+                <input type="date" id="goal_due_date_box" name="query_goal_due_date" class="form-control">
+              </div>
+            </div>
 
-        <textarea id="goal_box" name="query_goal" rows="3"></textarea>
+            <div class="row">
+              <div class="col">
+                <label for="goal_status_box">Goal status</label>
+                <input type="text" id="goal_status_box" name="query_goal_status" class="form-control">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label for="main_goal_sport_box">Main goal sport</label>
+                <input type="text" id="main_goal_sport_box" name="query_main_goal_sport" class="form-control">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label for="goal_outcome_box">Goal outcome</label>
+                <input type="text" id="goal_outcome_box" name="query_goal_outcome" class="form-control">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label for="user_id_box">User</label>
+                <input type="text" id="user_id_box" name="query_user_id" class="form-control">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label for="workouts_count_box">Workouts count</label>
+                <input type="text" id="workouts_count_box" name="query_workouts_count" class="form-control">
+              </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px;">
+              <div class="col">
+                <button class="btn btn-pwd">Set Goal!</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <div>
-        <label for="goal_due_date_box">
-          Goal due date
-        </label>
-
-        <input type="date" id="goal_due_date_box" name="query_goal_due_date">
-      </div>
-
-      <div>
-        <label for="goal_status_box">
-          Goal status
-        </label>
-
-        <input type="text" id="goal_status_box" name="query_goal_status">
-      </div>
-
-      <div>
-        <label for="main_goal_sport_box">
-          Main goal sport
-        </label>
-
-        <input type="text" id="main_goal_sport_box" name="query_main_goal_sport">
-      </div>
-
-      <div>
-        <label for="goal_outcome_box">
-          Goal outcome
-        </label>
-
-        <input type="text" id="goal_outcome_box" name="query_goal_outcome">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-
-      <div>
-        <label for="workouts_count_box">
-          Workouts count
-        </label>
-
-        <input type="text" id="workouts_count_box" name="query_workouts_count">
-      </div>
-
-    <div style="padding-top: 20px;">
-      <button class= "btn btn-pwd">
-        Set Goal!
-      </button>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
 
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+<!--table starts-->
 <hr>
 
 <style>
@@ -204,4 +213,4 @@
   </div>
 </div>
 
-<hr>
+</body>
