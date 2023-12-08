@@ -89,7 +89,7 @@
 <!-- Equipment dropdown based on the selected sport -->
 <div class="row" style="padding-bottom: 20px;">
   <div class="col">
-    <label for="equipment_box">Select the equipment you have access to:</label>
+    <label for="equipment_box">Select special equipment/ conditions:</label>
     <select id="equipment_box" name="query_equipment[]" class="form-control" multiple>
       <!-- Default option -->
       <option value="default">Default</option>
@@ -119,11 +119,16 @@
       addOption(equipmentSelect, 'Kick board');
       addOption(equipmentSelect, 'Pull buoy');
     } else if (sport === 'Cycling') {
+      addOption(equipmentSelect, 'Hills in my area');
+      addOption(equipmentSelect, 'Flat roads');
+    } else if (sport === 'Running') {
+      addOption(equipmentSelect, 'Hills in my area');
+      addOption(equipmentSelect, 'Flat roads');
+    } else if (sport === 'Triathlon') {
       addOption(equipmentSelect, 'Bike');
-      addOption(equipmentSelect, 'Helmet');
-      addOption(equipmentSelect, 'Gloves');
-    }
-    // Add more conditions for other sports...
+      addOption(equipmentSelect, 'Running shoes');
+      addOption(equipmentSelect, 'Swimming equipment');
+      }
 
     function addOption(selectElement, optionText) {
       var option = document.createElement('option');
