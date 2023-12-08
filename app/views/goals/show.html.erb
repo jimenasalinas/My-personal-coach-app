@@ -4,7 +4,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; 
+    height: 100vh;
     background-color: #0a0b0c;
   }
 
@@ -16,12 +16,9 @@
   }
 </style>
 
-
 <div>
-  <div class= "text-center" >
-    <h1>
-      My Goal
-    </h1>
+  <div class="text-center">
+    <h1>My Goal</h1>
   </div>
 </div>
 
@@ -54,58 +51,43 @@
           <dd><%= time_ago_in_words(@the_goal.updated_at) %> ago</dd>
         </dl>
 
-          <div class="row" style= "padding-bottom: 20px">
-            <a href="/goals" class="btn btn-pwd">Go back</a>
-          </div>
-          <div class="row">
-            <a href="/delete_goal/<%= @the_goal.id %>" class="btn btn-pwd">Delete goal</a>
-          </div>
+        <div class="row" style="padding-bottom: 20px">
+          <a href="/goals" class="btn btn-pwd">Go back</a>
+        </div>
+        <div class="row">
+          <a href="/delete_goal/<%= @the_goal.id %>" class="btn btn-pwd">Delete goal</a>
+        </div>
 
-          <hr>
-<!--    </div>
-  </div>
--->
-<!--  <div class="row" style="padding-top: 20px; padding-bottom: 20px">
-    <div class="col-md-8 offset-md-2">
-      <div class="card py-4 h-100 table-container">-->
-        <h3 style="color: #64a19d; padding-bottom: 20px; padding-bottom: 20px" >Edit goal and log outcomes</h3>
+        <hr>
+
+        <h3 style="color: #64a19d; padding-bottom: 20px; padding-top: 10px">Edit goal and log outcomes</h3>
         <form action="/modify_goal/<%= @the_goal.id %>" method="post">
-          <div style="padding-bottom: 20px">
+          <div class="form-group" style="padding-bottom: 20px;">
             <label for="goal_box">Goal</label>
-            <textarea id="goal_box" name="query_goal"><%= @the_goal.goal %></textarea>
+            <textarea id="goal_box" name="query_goal" class="form-control" rows="3"><%= @the_goal.goal %></textarea>
           </div>
 
-          <div style="padding-bottom: 20px">
-            <label for="goal_due_date_box">Goal due date</label>
-            <input type="date" id="goal_due_date_box" name="query_goal_due_date" value="<%= @the_goal.goal_due_date %>">
+          <div class="form-group" style="padding-bottom: 20px;">
+            <label for="goal_due_date_box">Goal target date</label>
+            <input type="date" id="goal_due_date_box" name="query_goal_due_date" class="form-control" value="<%= @the_goal.goal_due_date %>">
           </div>
 
-          <div style="padding-bottom: 20px">
+<!--          <div class="form-group" style="padding-bottom: 20px;">
             <label for="goal_status_box">Goal status</label>
-            <input type="text" id="goal_status_box" name="query_goal_status" value="<%= @the_goal.goal_status %>">
-          </div>
+            <input type="text" id="goal_status_box" name="query_goal_status" class="form-control" value="<%#= @the_goal.goal_status %>">
+          </div>-->
 
-          <div style="padding-bottom: 20px">
+          <div class="form-group" style="padding-bottom: 20px;">
             <label for="main_goal_sport_box">Main goal sport</label>
-            <input type="text" id="main_goal_sport_box" name="query_main_goal_sport" value="<%= @the_goal.main_goal_sport %>">
+            <input type="text" id="main_goal_sport_box" name="query_main_goal_sport" class="form-control" value="<%= @the_goal.main_goal_sport %>">
           </div>
 
-          <div style="padding-bottom: 20px">
+          <div class="form-group" style="padding-bottom: 20px;">
             <label for="goal_outcome_box">Goal outcome</label>
-            <input type="text" id="goal_outcome_box" name="query_goal_outcome" value="<%= @the_goal.goal_outcome %>">
+            <input type="text" id="goal_outcome_box" name="query_goal_outcome" class="form-control" value="<%= @the_goal.goal_outcome %>">
           </div>
 
-          <div style="padding-bottom: 20px">
-            <label for="user_id_box">User</label>
-            <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_goal.user_id %>">
-          </div>
-
-          <div>
-            <label for="workouts_count_box">Workouts count</label>
-            <input type="text" id="workouts_count_box" name="query_workouts_count" value="<%= @the_goal.workouts_count %>">
-          </div>
-
-          <div style="padding-top: 20px;">
+          <div class="form-group" style="padding-top: 20px;">
             <button class="btn btn-pwd">Update goal</button>
           </div>
         </form>
