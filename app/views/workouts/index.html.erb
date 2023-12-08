@@ -86,65 +86,69 @@
 <!--          equipment field, based on previous field-->
 
 
-<!-- Equipment dropdown based on the selected sport -->
-<div class="row" style="padding-bottom: 20px;">
-  <div class="col">
-    <label for="equipment_box">Select special equipment/ conditions:</label>
-    <select id="equipment_box" name="query_equipment[]" class="form-control" multiple>
-      <!-- Default option -->
-      <option value="default">Default</option>
-    </select>
-  </div>
-</div>
-
-
-<script>
-  document.getElementById('workout_sport_box').addEventListener('change', function () {
-    updateEquipmentOptions();
-  });
-
-  function updateEquipmentOptions() {
-    var sportSelect = document.getElementById('workout_sport_box');
-    var equipmentSelect = document.getElementById('equipment_box');
-
-    // Reset options
-    equipmentSelect.innerHTML = '<option value="default">Default</option>';
-
-    // Define options based on the selected sport
-    var sport = sportSelect.value;
-
-    if (sport === 'Swimming') {
-      addOption(equipmentSelect, 'Fins');
-      addOption(equipmentSelect, 'Paddles');
-      addOption(equipmentSelect, 'Kick board');
-      addOption(equipmentSelect, 'Pull buoy');
-    } else if (sport === 'Cycling') {
-      addOption(equipmentSelect, 'Hills in my area');
-      addOption(equipmentSelect, 'Flat roads');
-    } else if (sport === 'Running') {
-      addOption(equipmentSelect, 'Hills in my area');
-      addOption(equipmentSelect, 'Flat roads');
-    } else if (sport === 'Triathlon') {
-      addOption(equipmentSelect, 'Bike');
-      addOption(equipmentSelect, 'Running shoes');
-      addOption(equipmentSelect, 'Swimming equipment');
-      }
-
-    function addOption(selectElement, optionText) {
-      var option = document.createElement('option');
-      option.value = optionText.toLowerCase();
-      option.text = optionText;
-      selectElement.add(option);
-    }
-  }
-</script>
-
-          <div class="row" style="padding-bottom: 20px;">
-            <div class="col">
-              <label for="workout_intensity_box">Adjust workout intensity:</label>
-              <input type="text" id="workout_intensity_box" name="query_workout_intensity" class="form-control">
-            </div>
+        <!-- Equipment dropdown based on the selected sport -->
+        <div class="row" style="padding-bottom: 20px;">
+          <div class="col">
+            <label for="equipment_box">Select special equipment/ conditions:</label>
+            <select id="equipment_box" name="query_equipment[]" class="form-control" multiple>
+              <!-- Default option -->
+              <option value="default">Default</option>
+            </select>
           </div>
+        </div>
+
+
+        <script>
+          document.getElementById('workout_sport_box').addEventListener('change', function () {
+            updateEquipmentOptions();
+          });
+
+          function updateEquipmentOptions() {
+            var sportSelect = document.getElementById('workout_sport_box');
+            var equipmentSelect = document.getElementById('equipment_box');
+
+            // Reset options
+            equipmentSelect.innerHTML = '<option value="default">Default</option>';
+
+            // Define options based on the selected sport
+            var sport = sportSelect.value;
+
+            if (sport === 'Swimming') {
+              addOption(equipmentSelect, 'Fins');
+              addOption(equipmentSelect, 'Paddles');
+              addOption(equipmentSelect, 'Kick board');
+              addOption(equipmentSelect, 'Pull buoy');
+            } else if (sport === 'Cycling') {
+              addOption(equipmentSelect, 'Hills in my area');
+              addOption(equipmentSelect, 'Flat roads');
+            } else if (sport === 'Running') {
+              addOption(equipmentSelect, 'Hills in my area');
+              addOption(equipmentSelect, 'Flat roads');
+            } else if (sport === 'Triathlon') {
+              addOption(equipmentSelect, 'Bike');
+              addOption(equipmentSelect, 'Running shoes');
+              addOption(equipmentSelect, 'Swimming equipment');
+              }
+
+            function addOption(selectElement, optionText) {
+              var option = document.createElement('option');
+              option.value = optionText.toLowerCase();
+              option.text = optionText;
+              selectElement.add(option);
+            }
+          }
+        </script>
+
+      <div class="row" style="padding-bottom: 20px;">
+        <div class="col">
+          <label for="workout_intensity_box">Adjust workout intensity:</label>
+          <select id="workout_intensity_box" name="query_workout_intensity" class="form-control">
+            <option value="default">Default</option>
+            <option value="take_it_easy">Take it easy today</option>
+          </select>
+        </div>
+      </div>
+
 
 
           <div class="row" style="padding-top: 20px;">
