@@ -79,9 +79,8 @@
 
 
 <!--table starts-->
-<hr>
 
-<style>
+<style> 
   .table-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -89,103 +88,45 @@
   }
 </style>
 
-<div style="text-align: center;">
-  <div style="background-color: rgba(255, 255, 255, 0.9); padding: 20px; display: inline-block;">
-    <table class="table" border="1">
-      <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Goal
-        </th>
-
-        <th>
-          Goal due date
-        </th>
-
-        <th>
-          Goal status
-        </th>
-
-        <th>
-          Main goal sport
-        </th>
-
-        <th>
-          Goal outcome
-        </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
-          Workouts count
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_goals.each do |a_goal| %>
-      <tr>
-        <td>
-          <%= a_goal.id %>
-        </td>
-
-        <td>
-          <%= a_goal.goal %>
-        </td>
-
-        <td>
-          <%= a_goal.goal_due_date %>
-        </td>
-
-        <td>
-          <%= a_goal.goal_status %>
-        </td>
-
-        <td>
-          <%= a_goal.main_goal_sport %>
-        </td>
-
-        <td>
-          <%= a_goal.goal_outcome %>
-        </td>
-
-        <td>
-          <%= a_goal.user_id %>
-        </td>
-
-        <td>
-          <%= a_goal.workouts_count %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_goal.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_goal.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/goals/<%= a_goal.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
+<div class="row" style="padding-top: 20px; padding-bottom: 20px">
+  <div class="col-md-8 offset-md-2">
+    <div class="card py-4 h-100 table-container">
+      <h2 style="color: #64a19d; padding-top: 10px;" class="text-center">Goal log</h2>
+      <div class="card-body text-center">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Goal</th>
+              <th>Goal target date</th>
+              <th>Goal status</th>
+              <th>Main goal sport</th>
+              <th>Goal outcome</th>
+              <th>Created at</th>
+              <th>Updated at</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @list_of_goals.each do |a_goal| %>
+              <tr>
+                <td><%= a_goal.goal %></td>
+                <td><%= a_goal.goal_due_date %></td>
+                <td><%= a_goal.goal_status %></td>
+                <td><%= a_goal.main_goal_sport %></td>
+                <td><%= a_goal.goal_outcome %></td>
+                <td><%= time_ago_in_words(a_goal.created_at) %> ago</td>
+                <td><%= time_ago_in_words(a_goal.updated_at) %> ago</td>
+                <td>
+                  <a href="/goals/<%= a_goal.id %>">
+                    Show details
+                  </a>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 
