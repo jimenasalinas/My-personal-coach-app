@@ -1,6 +1,6 @@
-<style >
+<style>
   body {
-    background-image: url('<%= asset_path("main_picture.webp") %>');
+    background-image: url('<%= asset_path("demo-image-01.jpg") %>');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,13 +8,19 @@
     background-color: #0a0b0c;
   }
 
-</style >
+  .container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 0 auto; /* Center the container horizontally */
+    max-width: 800px; /* Set your desired maximum width */
+  }
+</style>
 
-<div>
+<div class="container">
   <div>
-    <h1>
-      Workout #<%= @the_workout.id %> details
-    </h1>
+    <h2 style="color: #64a19d">
+      Workout details
+    </h2>
 
     <div>
       <div>
@@ -87,12 +93,6 @@
         <%= @the_workout.workout_feelings %>
       </dd>
 
-      <dt>
-        User
-      </dt>
-      <dd>
-        <%= @the_workout.user_id %>
-      </dd>
 
       <dt>
         Goal
@@ -116,14 +116,11 @@
       </dd>
     </dl>
   </div>
-</div>
 
-<hr>
+  <hr>
 
-
-<div>
   <div>
-    <h2>
+    <h2 style="color: #64a19d">
       Edit workout
     </h2>
 
@@ -133,7 +130,7 @@
           Workout date
         </label>
 
-        <input type="date" id="workout_date_box" name="query_workout_date" value="<%= @the_workout.workout_date %>">
+        <input type="date" id="workout_date_box" name="query_workout_date" class="form-control" value="<%= @the_workout.workout_date %>">
       </div>
 
       <div>
@@ -141,7 +138,7 @@
           Duration minutes
         </label>
 
-        <input type="text" id="duration_minutes_box" name="query_duration_minutes" value="<%= @the_workout.duration_minutes %>">
+        <input type="text" id="duration_minutes_box" name="query_duration_minutes" class="form-control" value="<%= @the_workout.duration_minutes %>">
       </div>
 
       <div>
@@ -149,7 +146,7 @@
           Equipment
         </label>
 
-        <input type="text" id="equipment_box" name="query_equipment" value="<%= @the_workout.equipment %>">
+        <input type="text" id="equipment_box" name="query_equipment" class="form-control" value="<%= @the_workout.equipment %>">
       </div>
 
       <div>
@@ -157,7 +154,7 @@
           Assignment
         </label>
 
-        <textarea id="assignment_box" name="query_assignment"><%= @the_workout.assignment %></textarea>
+        <textarea id="assignment_box" name="query_assignment" class="form-control" rows="3"><%= @the_workout.assignment %></textarea>
       </div>
 
       <div>
@@ -165,7 +162,7 @@
           Workout sport
         </label>
 
-        <input type="text" id="workout_sport_box" name="query_workout_sport" value="<%= @the_workout.workout_sport %>">
+        <input type="text" id="workout_sport_box" name="query_workout_sport" class="form-control" value="<%= @the_workout.workout_sport %>">
       </div>
 
       <div>
@@ -173,7 +170,7 @@
           Workout intensity
         </label>
 
-        <input type="text" id="workout_intensity_box" name="query_workout_intensity" value="<%= @the_workout.workout_intensity %>">
+        <input type="text" id="workout_intensity_box" name="query_workout_intensity" class="form-control" value="<%= @the_workout.workout_intensity %>">
       </div>
 
       <div>
@@ -181,7 +178,7 @@
           Completion status
         </label>
 
-        <input type="text" id="completion_status_box" name="query_completion_status" value="<%= @the_workout.completion_status %>">
+        <input type="text" id="completion_status_box" name="query_completion_status" class="form-control" value="<%= @the_workout.completion_status %>">
       </div>
 
       <div>
@@ -189,7 +186,7 @@
           Workout feelings
         </label>
 
-        <input type="text" id="workout_feelings_box" name="query_workout_feelings" value="<%= @the_workout.workout_feelings %>">
+        <input type="text" id="workout_feelings_box" name="query_workout_feelings" class="form-control" value="<%= @the_workout.workout_feelings %>">
       </div>
 
       <div>
@@ -197,7 +194,7 @@
           User
         </label>
 
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_workout.user_id %>">
+        <input type="text" id="user_id_box" name="query_user_id" class="form-control" value="<%= @the_workout.user_id %>">
       </div>
 
       <div>
@@ -205,15 +202,14 @@
           Goal
         </label>
 
-        <input type="text" id="goal_id_box" name="query_goal_id" value="<%= @the_workout.goal_id %>">
+        <input type="text" id="goal_id_box" name="query_goal_id" class="form-control" value="<%= @the_workout.goal_id %>">
       </div>
 
-    <div style="padding-top: 20px;">
-      <button class= "btn btn-pwd">
-        Update Workout
-      </button>
+      <div style="padding-top: 20px;">
+        <button class="btn btn-pwd">
+          Update Workout
+        </button>
       </div>
-
     </form>
   </div>
 </div>
