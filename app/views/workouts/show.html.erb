@@ -186,19 +186,19 @@
             <option value="take_it_easy" <%= @the_workout.workout_intensity == 'take_it_easy' ? 'selected' : '' %>>Take it easy today</option>
           </select>
         </div>
+
+
+      <div class="row" style="padding-bottom: 10px; padding-top: 10px;">
+        <div class="col">
+          <label for="completion_status_box">Completion status:</label>
+          <select id="completion_status_box" name="query_completion_status" class="form-control">
+            <option value="Completed">Completed</option>
+            <option value="Couldn't Train Today">Couldn't Train Today</option>
+            <option value="Partially Completed">Partially Completed</option>
+          </select>
+        </div>
       </div>
 
-
-        <input type="text" id="workout_intensity_box" name="query_workout_intensity" class="form-control" value="<%= @the_workout.workout_intensity %>">
-      </div>
-
-      <div>
-        <label for="completion_status_box">
-          Completion status
-        </label>
-
-        <input type="text" id="completion_status_box" name="query_completion_status" class="form-control" value="<%= @the_workout.completion_status %>">
-      </div>
 
       <div>
         <label for="workout_feelings_box">
