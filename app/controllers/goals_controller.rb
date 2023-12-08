@@ -24,11 +24,11 @@ class GoalsController < ApplicationController
     the_goal = Goal.new
     the_goal.goal = params.fetch("query_goal")
     the_goal.goal_due_date = params.fetch("query_goal_due_date")
-    the_goal.goal_status = params.fetch("query_goal_status")
+    # the_goal.goal_status = params.fetch("query_goal_status")
     the_goal.main_goal_sport = params.fetch("query_main_goal_sport")
-    the_goal.goal_outcome = params.fetch("query_goal_outcome")
-    the_goal.user_id = params.fetch("query_user_id")
-    the_goal.workouts_count = params.fetch("query_workouts_count")
+    # the_goal.goal_outcome = params.fetch("query_goal_outcome")
+    # the_goal.user_id = params.fetch("query_user_id")
+    # the_goal.workouts_count = params.fetch("query_workouts_count")
 
     if the_goal.valid?
       the_goal.save
