@@ -200,29 +200,19 @@
       </div>
 
 
-      <div>
-        <label for="workout_feelings_box">
-          Workout feelings
-        </label>
-
-        <input type="text" id="workout_feelings_box" name="query_workout_feelings" class="form-control" value="<%= @the_workout.workout_feelings %>">
+      <div class="row" style="padding-bottom: 20px;">
+        <div class="col">
+          <label for="workout_feelings_box">Workout feelings:</label>
+          <select id="workout_feelings_box" name="query_workout_feelings" class="form-control">
+            <option value="Felt normal">Felt normal</option>
+            <option value="Felt great">Felt great</option>
+            <option value="Felt tired">Felt tired</option>
+            <option value="Felt unmotivated">Felt unmotivated</option>
+            <option value="Felt strong!">Felt strong!</option>
+          </select>
+        </div>
       </div>
 
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" class="form-control" value="<%= @the_workout.user_id %>">
-      </div>
-
-      <div>
-        <label for="goal_id_box">
-          Goal
-        </label>
-
-        <input type="text" id="goal_id_box" name="query_goal_id" class="form-control" value="<%= @the_workout.goal_id %>">
-      </div>
 
       <div style="padding-top: 20px;">
         <button class="btn btn-pwd">

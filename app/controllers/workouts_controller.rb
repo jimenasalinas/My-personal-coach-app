@@ -27,6 +27,12 @@ class WorkoutsController < ApplicationController
     the_workout.workout_intensity = params.fetch("query_workout_intensity")
     # the_workout.completion_status = params.fetch("query_completion_status")
     # the_workout.workout_feelings = params.fetch("query_workout_feelings")
+
+    # user logged_in
+    # current_user = User.find_by(id: session[:user_id])
+    # goal = current_user.goals.find_or_create_by(main_goal_sport: params.fetch("query_workout_sport"))
+    # the_workout.user = current_user
+    # the_workout.goal = goal
     # the_workout.user_id = params.fetch("query_user_id")
     # the_workout.goal_id = params.fetch("query_goal_id")
 
@@ -50,8 +56,8 @@ class WorkoutsController < ApplicationController
     the_workout.workout_intensity = params.fetch("query_workout_intensity")
     the_workout.completion_status = params.fetch("query_completion_status")
     the_workout.workout_feelings = params.fetch("query_workout_feelings")
-    the_workout.user_id = params.fetch("query_user_id")
-    the_workout.goal_id = params.fetch("query_goal_id")
+    # the_workout.user_id = params.fetch("query_user_id")
+    # the_workout.goal_id = params.fetch("query_goal_id")
 
     if the_workout.valid?
       the_workout.save
