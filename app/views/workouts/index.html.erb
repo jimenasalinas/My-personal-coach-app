@@ -83,14 +83,56 @@
               </div>
             </div>
 
+<!--          equipment field, based on previous field-->
 
 
-          <div class="row" style="padding-bottom: 20px;">
-            <div class="col">
-              <label for="equipment_box">Select the equipment you have access to:</label>
-              <input type="text" id="equipment_box" name="query_equipment" class="form-control">
-            </div>
-          </div>
+<!-- Equipment dropdown based on the selected sport -->
+<div class="row" style="padding-bottom: 20px;">
+  <div class="col">
+    <label for="equipment_box">Select the equipment you have access to:</label>
+    <select id="equipment_box" name="query_equipment[]" class="form-control" multiple>
+      <!-- Default option -->
+      <option value="default">Default</option>
+    </select>
+  </div>
+</div>
+
+
+<script>
+  document.getElementById('workout_sport_box').addEventListener('change', function () {
+    updateEquipmentOptions();
+  });
+
+  function updateEquipmentOptions() {
+    var sportSelect = document.getElementById('workout_sport_box');
+    var equipmentSelect = document.getElementById('equipment_box');
+
+    // Reset options
+    equipmentSelect.innerHTML = '<option value="default">Default</option>';
+
+    // Define options based on the selected sport
+    var sport = sportSelect.value;
+
+    if (sport === 'Swimming') {
+      addOption(equipmentSelect, 'Fins');
+      addOption(equipmentSelect, 'Paddles');
+      addOption(equipmentSelect, 'Kick board');
+      addOption(equipmentSelect, 'Pull buoy');
+    } else if (sport === 'Cycling') {
+      addOption(equipmentSelect, 'Bike');
+      addOption(equipmentSelect, 'Helmet');
+      addOption(equipmentSelect, 'Gloves');
+    }
+    // Add more conditions for other sports...
+
+    function addOption(selectElement, optionText) {
+      var option = document.createElement('option');
+      option.value = optionText.toLowerCase();
+      option.text = optionText;
+      selectElement.add(option);
+    }
+  }
+</script>
 
           <div class="row" style="padding-bottom: 20px;">
             <div class="col">
