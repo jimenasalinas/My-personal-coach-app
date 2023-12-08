@@ -82,127 +82,56 @@
 
 
 <hr>
-<div>
-  <div>
-    <table border="1">
-      <tr>
-        <th>
-          ID
-        </th>
+<style>
+  .table-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 0 auto; /* Center the container horizontally */
+  }
+</style>
 
-        <th>
-          Workout date
-        </th>
-
-        <th>
-          Duration minutes
-        </th>
-
-        <th>
-          Equipment
-        </th>
-
-        <th>
-          Assignment
-        </th>
-
-        <th>
-          Workout sport
-        </th>
-
-        <th>
-          Workout intensity
-        </th>
-
-        <th>
-          Completion status
-        </th>
-
-        <th>
-          Workout feelings
-        </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
-          Goal
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_workouts.each do |a_workout| %>
-      <tr>
-        <td>
-          <%= a_workout.id %>
-        </td>
-
-        <td>
-          <%= a_workout.workout_date %>
-        </td>
-
-        <td>
-          <%= a_workout.duration_minutes %>
-        </td>
-
-        <td>
-          <%= a_workout.equipment %>
-        </td>
-
-        <td>
-          <%= a_workout.assignment %>
-        </td>
-
-        <td>
-          <%= a_workout.workout_sport %>
-        </td>
-
-        <td>
-          <%= a_workout.workout_intensity %>
-        </td>
-
-        <td>
-          <%= a_workout.completion_status %>
-        </td>
-
-        <td>
-          <%= a_workout.workout_feelings %>
-        </td>
-
-        <td>
-          <%= a_workout.user_id %>
-        </td>
-
-        <td>
-          <%= a_workout.goal_id %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_workout.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_workout.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/workouts/<%= a_workout.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
+<div class="row" style="padding-top: 20px; padding-bottom: 20px">
+  <div class="col-md-8 offset-md-2">
+    <div class="card py-4 h-100 table-container">
+      <h2 style="color: #a16468; padding-top: 10px;" class="text-center">My Workouts</h2>
+      <div class="card-body text-center">
+        <table class="table table-bordered">
+          <p style="color: #343a40; padding-bottom: 20px" class="text-center">Explore your workout history</p>
+          <thead>
+            <tr>
+              <th>Workout date</th>
+              <th>Assignment</th>
+              <th>Workout sport</th>
+              <th>Workout intensity</th>
+              <th>Completion status</th>
+              <th>Workout feelings</th>
+<!--              <th>Created at</th>
+              <th>Updated at</th>-->
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @list_of_workouts.each do |a_workout| %>
+              <tr>
+                <td><%= a_workout.workout_date %></td>
+                <td><%= a_workout.assignment %></td>
+                <td><%= a_workout.workout_sport %></td>
+                <td><%= a_workout.workout_intensity %></td>
+                <td><%= a_workout.completion_status %></td>
+                <td><%= a_workout.workout_feelings %></td>
+<!--                <td><%#= time_ago_in_words(a_workout.created_at) %> ago</td>
+                <td><%#= time_ago_in_words(a_workout.updated_at) %> ago</td>-->
+                <td>
+                  <a href="/workouts/<%= a_workout.id %>">
+                    Show details
+                  </a>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 
