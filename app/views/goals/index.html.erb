@@ -24,57 +24,33 @@
  <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="card py-4 h-100">
+        <h2 style="color: #64a19d; padding-top: 10px;" class="text-center">Add a new goal</h2>
         <div class="card-body text-center">
-          <h2>Add a new goal</h2>
           <form action="/insert_goal" method="post">
-            <div class="row">
+
+              
+
+            <div class="row" style="padding-bottom: 20px;">
               <div class="col">
                 <label for="goal_box">Goal</label>
                 <textarea id="goal_box" name="query_goal" rows="3" class="form-control"></textarea>
               </div>
             </div>
 
-            <div class="row">
+            <div class="row" style="padding-bottom: 20px;">
               <div class="col">
-                <label for="goal_due_date_box">Goal due date</label>
+                <label for="goal_due_date_box">Goal target date</label>
                 <input type="date" id="goal_due_date_box" name="query_goal_due_date" class="form-control">
               </div>
             </div>
 
-            <div class="row">
-              <div class="col">
-                <label for="goal_status_box">Goal status</label>
-                <input type="text" id="goal_status_box" name="query_goal_status" class="form-control">
-              </div>
-            </div>
-
-            <div class="row">
+            <div class="row" style="padding-bottom: 20px;">
               <div class="col">
                 <label for="main_goal_sport_box">Main goal sport</label>
                 <input type="text" id="main_goal_sport_box" name="query_main_goal_sport" class="form-control">
               </div>
             </div>
 
-            <div class="row">
-              <div class="col">
-                <label for="goal_outcome_box">Goal outcome</label>
-                <input type="text" id="goal_outcome_box" name="query_goal_outcome" class="form-control">
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <label for="user_id_box">User</label>
-                <input type="text" id="user_id_box" name="query_user_id" class="form-control">
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <label for="workouts_count_box">Workouts count</label>
-                <input type="text" id="workouts_count_box" name="query_workouts_count" class="form-control">
-              </div>
-            </div>
 
             <div class="row" style="padding-top: 20px;">
               <div class="col">
