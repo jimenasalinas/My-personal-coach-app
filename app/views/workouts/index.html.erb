@@ -85,18 +85,16 @@
 
 <!--          equipment field, based on previous field-->
 
-
         <!-- Equipment dropdown based on the selected sport -->
         <div class="row" style="padding-bottom: 20px;">
           <div class="col">
-            <label for="equipment_box">Select special equipment/ conditions:</label>
+            <label for="equipment_box">Select special equipment/conditions:</label>
             <select id="equipment_box" name="query_equipment[]" class="form-control" multiple>
               <!-- Default option -->
               <option value="default">Default</option>
             </select>
           </div>
         </div>
-
 
         <script>
           document.getElementById('workout_sport_box').addEventListener('change', function () {
@@ -112,6 +110,7 @@
 
             // Define options based on the selected sport
             var sport = sportSelect.value;
+            var selectedOptions = [];
 
             if (sport === 'Swimming') {
               addOption(equipmentSelect, 'Fins');
@@ -128,7 +127,7 @@
               addOption(equipmentSelect, 'Bike');
               addOption(equipmentSelect, 'Running shoes');
               addOption(equipmentSelect, 'Swimming equipment');
-              }
+            }
 
             function addOption(selectElement, optionText) {
               var option = document.createElement('option');
@@ -136,8 +135,16 @@
               option.text = optionText;
               selectElement.add(option);
             }
+
+            // Add an event listener to handle selection changes
+            equipmentSelect.addEventListener('change', function () {
+              selectedOptions = Array.from(equipmentSelect.selectedOptions, option => option.value);
+              // Join selected options into a string and update the query parameter
+              document.querySelector('input[name="query_equipment"]').value = selectedOptions.join('+');
+            });
           }
         </script>
+
 
       <div class="row" style="padding-bottom: 20px;">
         <div class="col">

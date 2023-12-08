@@ -22,13 +22,13 @@ class WorkoutsController < ApplicationController
     the_workout.workout_date = params.fetch("query_workout_date")
     the_workout.duration_minutes = params.fetch("query_duration_minutes")
     the_workout.equipment = params.fetch("query_equipment")
-    the_workout.assignment = params.fetch("query_assignment")
+    # the_workout.assignment = params.fetch("query_assignment")
     the_workout.workout_sport = params.fetch("query_workout_sport")
     the_workout.workout_intensity = params.fetch("query_workout_intensity")
-    the_workout.completion_status = params.fetch("query_completion_status")
-    the_workout.workout_feelings = params.fetch("query_workout_feelings")
-    the_workout.user_id = params.fetch("query_user_id")
-    the_workout.goal_id = params.fetch("query_goal_id")
+    # the_workout.completion_status = params.fetch("query_completion_status")
+    # the_workout.workout_feelings = params.fetch("query_workout_feelings")
+    # the_workout.user_id = params.fetch("query_user_id")
+    # the_workout.goal_id = params.fetch("query_goal_id")
 
     if the_workout.valid?
       the_workout.save
