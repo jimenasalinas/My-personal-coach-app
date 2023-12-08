@@ -19,12 +19,12 @@
 </div>
 
 
-<div class="row">
-  <div class="col-md-6 offset-md-3">
-    <div class="card py-4 h-100">
-      <h2 style="color: #64a19d; padding-top: 10px;" class="text-center">Personalize</h2>
-      <div class="card-body text-center">
-        <form action="/insert_workout" method="post">
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <div class="card py-4 h-100">
+                <h2 style="color: #64a19d; padding-top: 10px;" class="text-center">Personalize</h2>
+                <div class="card-body text-center">
+                  <form action="/insert_workout" method="post">
 
           <div class="row" style="padding-bottom: 20px;">
             <div class="col">
@@ -32,6 +32,11 @@
               <input type="date" id="workout_date_box" name="query_workout_date" class="form-control">
             </div>
           </div>
+
+          <script>
+            // Set the default value to today's date
+            document.getElementById('workout_date_box').valueAsDate = new Date();
+          </script>
 
           <div class="row" style="padding-bottom: 20px;">
      <!--     //range bar-->
