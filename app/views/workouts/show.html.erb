@@ -157,18 +157,37 @@
         <textarea id="assignment_box" name="query_assignment" class="form-control" rows="3"><%= @the_workout.assignment %></textarea>
       </div>
 
-      <div>
-        <label for="workout_sport_box">
-          Workout sport
-        </label>
+    <div class="row" style="padding-bottom: 10px;">
+      <div class="col">
+        <label for="workout_sport_box">Workout sport:</label>
+        <select id="workout_sport_box" name="query_workout_sport" class="form-control">
+          <option value="Running" <%= @the_workout.workout_sport == 'Running' ? 'selected' : '' %>>Running</option>
+          <option value="Swimming" <%= @the_workout.workout_sport == 'Swimming' ? 'selected' : '' %>>Swimming</option>
+          <option value="Cycling" <%= @the_workout.workout_sport == 'Cycling' ? 'selected' : '' %>>Cycling</option>
+          <option value="Indoors Cycling (trainer)" <%= @the_workout.workout_sport == 'Indoors Cycling (trainer)' ? 'selected' : '' %>>Indoors Cycling (trainer)</option>
+          <option value="Jogging" <%= @the_workout.workout_sport == 'Jogging' ? 'selected' : '' %>>Jogging</option>
+          <option value="Open Water Swimming" <%= @the_workout.workout_sport == 'Open Water Swimming' ? 'selected' : '' %>>Open Water Swimming</option>
+          <option value="Run-Walk" <%= @the_workout.workout_sport == 'Run-Walk' ? 'selected' : '' %>>Run-Walk</option>
+          <option value="Spinning" <%= @the_workout.workout_sport == 'Spinning' ? 'selected' : '' %>>Spinning</option>
+          <option value="Trail Running" <%= @the_workout.workout_sport == 'Trail Running' ? 'selected' : '' %>>Trail Running</option>
+          <option value="Treadmill Running" <%= @the_workout.workout_sport == 'Treadmill Running' ? 'selected' : '' %>>Treadmill Running</option>
+          <option value="Triathlon" <%= @the_workout.workout_sport == 'Triathlon' ? 'selected' : '' %>>Triathlon</option>
+          <option value="At-home strengthening" <%= @the_workout.workout_sport == 'At-home strengthening' ? 'selected' : '' %>>At-home strengthening</option>
+        </select>
+      </div>
+    </div>
 
-        <input type="text" id="workout_sport_box" name="query_workout_sport" class="form-control" value="<%= @the_workout.workout_sport %>">
+
+      <div class="row" style="padding-bottom: 20px;">
+        <div class="col">
+          <label for="workout_intensity_box">Adjust workout intensity:</label>
+          <select id="workout_intensity_box" name="query_workout_intensity" class="form-control">
+            <option value="default" <%= @the_workout.workout_intensity == 'default' ? 'selected' : '' %>>Default</option>
+            <option value="take_it_easy" <%= @the_workout.workout_intensity == 'take_it_easy' ? 'selected' : '' %>>Take it easy today</option>
+          </select>
+        </div>
       </div>
 
-      <div>
-        <label for="workout_intensity_box">
-          Workout intensity
-        </label>
 
         <input type="text" id="workout_intensity_box" name="query_workout_intensity" class="form-control" value="<%= @the_workout.workout_intensity %>">
       </div>
