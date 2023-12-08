@@ -37,12 +37,15 @@
               </div>
             </div>
 
-            <div class="row" style="padding-bottom: 20px;">
-              <div class="col">
-                <label for="goal_due_date_box">Goal target date</label>
-                <input type="date" id="goal_due_date_box" name="query_goal_due_date" class="form-control">
-              </div>
+
+          <div class="row" style="padding-bottom: 20px;">
+            <div class="col">
+              <label for="goal_due_date_box">Goal target date</label>
+              <% six_months_from_today = (Date.today + 6.months).to_s %>
+              <input type="date" id="goal_due_date_box" name="query_goal_due_date" class="form-control" value="<%= six_months_from_today %>">
             </div>
+          </div>
+
 
               <div class="row" style="padding-bottom: 20px;">
                 <div class="col">
