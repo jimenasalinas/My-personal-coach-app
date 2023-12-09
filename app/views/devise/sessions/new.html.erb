@@ -8,9 +8,21 @@
 
   }
 
+  .table-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 0 auto; 
+  }
+
+  .table-container table {
+    max-width: 100%; /* table should not exceed the container width */
+    overflow-x: auto; 
+  }
 </style >
 
-<div class="col-lg-8" style="padding: 15px;">
+
+
+<div class="col-lg-8; table-container" style="padding: 15px;">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -38,12 +50,12 @@
     <%= f.submit "Log in", class: "btn btn-primary" %>
   </div>
 
-</div>
-</div>
-
-<% end %>
-
 
 <div class="col-lg-8" style="padding: 15px;">
 <%= render "devise/shared/links" %>
 </div>
+
+</div>
+</div>
+
+<% end %>
