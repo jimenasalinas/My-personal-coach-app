@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     matching_goals = Goal.where({ :user_id => current_user.id })
 
