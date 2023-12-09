@@ -6,7 +6,7 @@
   <title>Your Page Title</title>
   <style>
     body {
-      background-image: url('<%= asset_path("main_picture.webp") %>');
+      background-image: url('<%= asset_path("demo-image-02.jpg") %>');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -114,6 +114,48 @@
     </div>
 
   </div>
+
+
+<!--  today's workout-->
+<style>
+  .table-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .table-container table {
+    max-width: 100%; /* table should not exceed the container width */
+    overflow-x: auto;
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card py-4 h-100 table-container">
+        <h2 style="color: #a16468; padding-top: 10px;" class="text-center">Today's Workout:</h2>
+        <div class="card-body text-center">
+          <div class="table-responsive">
+            <!-- Wrap the table inside a div with class table-responsive -->
+            <table class="table">
+              <tbody>
+                <% @list_of_workouts_today.each do |a_workout| %>
+                  <tr>
+                    <td><%= a_workout.assignment %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div> <!-- Add an empty column to push the table to the right -->
+  </div>
+</div>
+
+
 
 </body>
 </html>

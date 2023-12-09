@@ -4,6 +4,13 @@ class DashboardController < ApplicationController
 
     @list_of_goals = matching_goals.order({ :created_at => :desc })
 
+    matching_workouts = Workout.where({ :user_id => current_user.id })
+
+    @list_of_workouts = matching_workouts.order({ :created_at => :desc })
+
+    matching_workouts_today = Workout.where({ user_id: current_user.id, workout_date: Date.today })
+    @list_of_workouts_today = matching_workouts_today.order({ created_at: :desc })
+
 
     #most recent goal
     @most_recent_goal = @list_of_goals.first&.goal

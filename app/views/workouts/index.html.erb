@@ -212,42 +212,14 @@
 <div class="row" style="padding-top: 20px; padding-bottom: 20px">
   <div class="col-md-8 offset-md-2">
     <div class="card py-4 h-100 table-container">
-      <h2 style="color: #a16468; padding-top: 10px;" class="text-center">My Workouts</h2>
+      <h2 style="color: #a16468; padding-top: 10px;" class="text-center">My PersonAI's Response:</h2>
       <div class="card-body text-center">
         <div class="table-responsive"> <!-- Wrap the table inside a div with class table-responsive -->
-          <table class="table table-bordered">
-          <p style="color: #343a40; padding-bottom: 20px" class="text-center">Workout history:</p>
-          <thead>
-            <tr>
-              <th>Workout date</th>
-              <th>My Goal</th>              
-<!--              <th>Assignment</th>-->
-              <th>Workout sport</th>
-              <th>Workout intensity</th>
-              <th>Completion status</th>
-              <th>Workout feelings</th>
-<!--              <th>Created at</th>
-              <th>Updated at</th>-->
-              <th></th>
-            </tr>
-          </thead>
+          <table class="table">
           <tbody>
             <% @list_of_workouts.each do |a_workout| %>
               <tr>
-                <td><%= a_workout.workout_date %></td>
-                <td><%= a_workout.goal.goal %></td>
-<!--                <td><%#= a_workout.assignment %></td>-->
-                <td><%= a_workout.workout_sport %></td>
-                <td><%= a_workout.workout_intensity %></td>
-                <td><%= a_workout.completion_status %></td>
-                <td><%= a_workout.workout_feelings %></td>
-<!--                <td><%#= time_ago_in_words(a_workout.created_at) %> ago</td>
-                <td><%#= time_ago_in_words(a_workout.updated_at) %> ago</td>-->
-                <td>
-                  <a href="/workouts/<%= a_workout.id %>">
-                    Show details - Mark as Completed - Record how you felt
-                  </a>
-                </td>
+                <td><%= a_workout.assignment %></td>
               </tr>
             <% end %>
           </tbody>
