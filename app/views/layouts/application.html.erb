@@ -18,12 +18,39 @@
 
 <body>
 
+<!--<div class="navbar" style="text-align: center; padding: 15px;">
+    <a href="/" class="navbar-brand">My PersonAI Coach</a>
+
+    <%# if current_user != nil %>-->
+<!--        <a href="/goals" class="nav-link">My goals</a>
+        <a href="/workouts" class="nav-link">My workouts</a>
+        <a href="/workouts/history" class="nav-link">My workout history</a>
+        <a href="/users/sign_out" class="nav-link">Sign out</a>
+        <a href="/users/edit" class="nav-link">Edit profile</a>
+    <%# else %>-->
+<!--        <a href="/users/sign_up" class="nav-link">Sign up</a>
+        <a href="/users/sign_in" class="nav-link">Sign in</a>
+    <%# end %>-->
+<!--</div>-->
+<!---->
+
 <div class="navbar" style="text-align: center; padding: 15px;">
     <a href="/" class="navbar-brand">My PersonAI Coach</a>
 
     <% if current_user != nil %>
         <a href="/goals" class="nav-link">My goals</a>
-        <a href="/workouts" class="nav-link">Plan a workout</a>
+        
+        <!-- Dropdown for My Workouts -->
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="myWorkoutsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My workouts
+            </a>
+            <div class="dropdown-menu" aria-labelledby="myWorkoutsDropdown">
+                <a class="dropdown-item" href="/workouts">Create a new workout</a>
+                <a class="dropdown-item" href="/workouts/history">My workout history</a>
+            </div>
+        </div>
+
         <a href="/users/sign_out" class="nav-link">Sign out</a>
         <a href="/users/edit" class="nav-link">Edit profile</a>
     <% else %>
@@ -31,6 +58,10 @@
         <a href="/users/sign_in" class="nav-link">Sign in</a>
     <% end %>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
 
 <div class="container-fluid" style="padding: 15px;">
   <% if notice.present? %>
