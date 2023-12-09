@@ -101,7 +101,12 @@
   .table-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0 auto; 
+  }
+
+  .table-container table {
+    width: 100%;
+    max-width: 100%; 
   }
 </style>
 
@@ -110,7 +115,8 @@
     <div class="card py-4 h-100 table-container">
       <h2 style="color: #a16468; padding-top: 10px;" class="text-center">My goals</h2>
       <div class="card-body text-center">
-        <table class="table table-bordered">
+        <div class="table-responsive"> <!-- Wrap the table inside a div with class table-responsive -->
+          <table class="table table-bordered">
               <p style="color: #343a40; padding-bottom: 20px" class="text-center">My PersonAI Coach takes your last goal to design your next workout</p>
           <thead>
             <tr>
@@ -142,10 +148,10 @@
               </tr>
             <% end %>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 </body>

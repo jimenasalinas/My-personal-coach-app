@@ -15,6 +15,12 @@
     <h1>
       Plan a workout with My PersonaAI Coach
     </h1>
+
+  <a style="color: #a16468">
+    Notice: My PersonAI coach is not a certified personal trainer or a professional coach, this is just workout inspo to keep you going.<br>
+    Consult with your doctor if you have any existing medical conditions.
+  </a>
+
   </div>
 </div>
 
@@ -194,7 +200,12 @@
   .table-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0 auto; 
+  }
+
+  .table-container table {
+    max-width: 100%; /* table should not exceed the container width */
+    overflow-x: auto; 
   }
 </style>
 
@@ -203,13 +214,14 @@
     <div class="card py-4 h-100 table-container">
       <h2 style="color: #a16468; padding-top: 10px;" class="text-center">My Workouts</h2>
       <div class="card-body text-center">
-        <table class="table table-bordered">
+        <div class="table-responsive"> <!-- Wrap the table inside a div with class table-responsive -->
+          <table class="table table-bordered">
           <p style="color: #343a40; padding-bottom: 20px" class="text-center">Workout history:</p>
           <thead>
             <tr>
               <th>Workout date</th>
               <th>My Goal</th>              
-              <th>Assignment</th>
+<!--              <th>Assignment</th>-->
               <th>Workout sport</th>
               <th>Workout intensity</th>
               <th>Completion status</th>
@@ -224,7 +236,7 @@
               <tr>
                 <td><%= a_workout.workout_date %></td>
                 <td><%= a_workout.goal.goal %></td>
-                <td><%= a_workout.assignment %></td>
+<!--                <td><%#= a_workout.assignment %></td>-->
                 <td><%= a_workout.workout_sport %></td>
                 <td><%= a_workout.workout_intensity %></td>
                 <td><%= a_workout.completion_status %></td>
@@ -240,6 +252,7 @@
             <% end %>
           </tbody>
         </table>
+         </div>
       </div>
     </div>
   </div>
