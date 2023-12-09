@@ -1,6 +1,6 @@
 class WorkoutsController < ApplicationController
   def index
-    matching_workouts = Workout.all
+    matching_workouts = Workout.where({ :user_id => current_user.id })
 
     @list_of_workouts = matching_workouts.order({ :created_at => :desc })
 
