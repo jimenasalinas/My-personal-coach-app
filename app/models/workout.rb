@@ -19,5 +19,5 @@
 class Workout < ApplicationRecord
   has_many  :workouts
   belongs_to :goal, foreign_key: "goal_id"
-  belongs_to :user
+  belongs_to :user,  counter_cache: true
 end

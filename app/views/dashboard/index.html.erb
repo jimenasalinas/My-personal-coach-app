@@ -72,8 +72,17 @@
 
             <div class="card py-4 h-100">
               <div class="card-body text-center">
-                <h4 class="text-uppercase m-0">Completed workouts:</h4>
+                <h4 class="text-uppercase m-0">Workouts Created for this goal:</h4>
                 <hr class="my-4 mx-auto" style="color: #64a19d;">
+
+              <!--display number of created workouts-->
+                    <% if @created_workouts_count  %>
+                    <p style="color: #64a19d; font-size: 26px;"><%= @created_workouts_count  %></p>
+                    <!-- Add more details as needed -->
+                  <% else %>
+                    <a href="/workouts" class="nav-link" style="color: #64a19d; font-size: 26px;"> Create a workout with My PersonAI Coach!</a>
+                  <% end %>
+
               </div>
             </div>
 
