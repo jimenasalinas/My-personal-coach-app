@@ -57,7 +57,7 @@ class WorkoutsController < ApplicationController
     if the_workout.valid?
 
       begin
-        message = "You are my coach, I am interested in completing #{goal.main_goal_sport} workouts toward my goal of #{goal.goal} which I am targeting to meet by #{goal.goal_due_date}, which is in #{@days_till_goal}. Today I want to train #{the_workout.workout_sport}, I have #{the_workout.equipment} equipment, I am thinking of working out for about #{the_workout.duration_minutes} minutes, and today I am feeling like completing your recommended #{the_workout.workout_intensity} intensity. Please assign me a clear workout for today."
+        message = "You are my coach, I am interested in completing #{goal.main_goal_sport} workouts toward my goal of #{goal.goal} which I am targeting to meet by #{goal.goal_due_date}, which is in #{@days_till_goal}. My fitness level is  #{current_user.fitness_level}. Today I want to train #{the_workout.workout_sport}, I have #{the_workout.equipment} equipment, I am thinking of working out for about #{the_workout.duration_minutes} minutes, and today I am feeling like completing your recommended #{the_workout.workout_intensity} intensity. Please assign me a clear workout for today."
 
         # initialize openai client
         client = OpenAI::Client.new(access_token: ENV.fetch("MY_PERSONAI_COACH"))
