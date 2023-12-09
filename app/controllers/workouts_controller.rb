@@ -30,6 +30,9 @@ class WorkoutsController < ApplicationController
     the_workout.workout_intensity = params.fetch("query_workout_intensity")
     # the_workout.completion_status = params.fetch("query_completion_status")
     # the_workout.workout_feelings = params.fetch("query_workout_feelings")
+    
+    # Make a join:
+    the_workout.goal = goal = Goal.find_or_create_by(user_id: current_user.id)
 
     # user logged_in
     # current_user = User.find_by(id: session[:user_id])
