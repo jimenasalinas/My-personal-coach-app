@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # landing page
   # READ
   get("/dashboard", { :controller => "dashboard", :action => "index" })
+  
 
   # CREATE
   post("/insert_goal", { :controller => "goals", :action => "create" })
@@ -30,6 +31,8 @@ Rails.application.routes.draw do
   # READ
   get("/workouts", { :controller => "workouts", :action => "index" })
   
+  get("/workouts/history", { :controller => "workouts", :action => "history" })
+
   get("/workouts/:path_id", { :controller => "workouts", :action => "show" })
   
   # UPDATE

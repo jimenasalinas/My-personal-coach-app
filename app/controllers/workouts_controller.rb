@@ -12,6 +12,14 @@ class WorkoutsController < ApplicationController
     render({ :template => "workouts/index" })
   end
 
+  def history
+    matching_workouts = Workout.where({ :user_id => current_user.id })
+
+    @list_of_workouts = matching_workouts.order({ :created_at => :desc })
+
+    render({ :template => "workouts/history" })
+  end
+
   def show
     the_id = params.fetch("path_id")
 
