@@ -208,6 +208,7 @@
           <thead>
             <tr>
               <th>Workout date</th>
+              <th>My Goal</th>              
               <th>Assignment</th>
               <th>Workout sport</th>
               <th>Workout intensity</th>
@@ -222,6 +223,7 @@
             <% @list_of_workouts.each do |a_workout| %>
               <tr>
                 <td><%= a_workout.workout_date %></td>
+                <td><%= a_workout.goal.goal %></td>
                 <td><%= a_workout.assignment %></td>
                 <td><%= a_workout.workout_sport %></td>
                 <td><%= a_workout.workout_intensity %></td>

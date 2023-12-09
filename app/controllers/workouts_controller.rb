@@ -37,7 +37,8 @@ class WorkoutsController < ApplicationController
     # the_workout.workout_feelings = params.fetch("query_workout_feelings")
     
     # Make a join:
-    the_workout.goal = goal = Goal.find_or_create_by(user_id: current_user.id)
+    the_workout.goal = goal = current_user.goals.order(created_at: :desc).first_or_create
+
 
     #for message input
     @most_recent_goal = the_workout.goal
