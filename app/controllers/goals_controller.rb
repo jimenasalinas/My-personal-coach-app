@@ -24,7 +24,7 @@ class GoalsController < ApplicationController
     # current_user = User.find_by(id: session[:user_id])
 
     the_goal = Goal.new
-    the_goal = Goal.new
+    the_goal.user_id = current_user.id
     the_goal.goal = params.fetch("query_goal")
     the_goal.goal_due_date = params.fetch("query_goal_due_date")
     # the_goal.goal_status = params.fetch("query_goal_status")
