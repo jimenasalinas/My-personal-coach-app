@@ -7,7 +7,7 @@
   
 <img width="1438" alt="Screen Shot 2024-02-07 at 11 39 13 AM" src="https://github.com/jimenasalinas/My-personal-coach-app/assets/111835409/8df05cc2-df4d-44b5-9fe5-f892cded55f6">
 
-- Create new workouts using AI to work towards achieviing a goal:
+- Create new workouts using AI to work towards achieving a goal:
   ![Screen Shot 2024-02-07 at 12 13 36 PM](https://github.com/jimenasalinas/My-personal-coach-app/assets/111835409/9e4aaa70-a3b5-4a00-809a-bc72d7db35c9)
   
 
