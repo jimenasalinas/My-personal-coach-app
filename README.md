@@ -1,3 +1,24 @@
+# My PersonAI Coach
+
+- User's can track their goals, the number of days left until their goal target date, and the workout they have completed:
+<img width="1435" alt="Screen Shot 2024-02-07 at 11 38 59 AM" src="https://github.com/jimenasalinas/My-personal-coach-app/assets/111835409/97f1bc82-d335-450f-ae31-02561522098a">
+
+- Edit and add new goals:
+  
+<img width="1438" alt="Screen Shot 2024-02-07 at 11 39 13 AM" src="https://github.com/jimenasalinas/My-personal-coach-app/assets/111835409/8df05cc2-df4d-44b5-9fe5-f892cded55f6">
+
+- Create new workouts using AI to work towards achieviing a goal:
+  ![Screen Shot 2024-02-07 at 12 13 36 PM](https://github.com/jimenasalinas/My-personal-coach-app/assets/111835409/9e4aaa70-a3b5-4a00-809a-bc72d7db35c9)
+  
+
+![Screen Shot 2024-02-07 at 12 13 52 PM](https://github.com/jimenasalinas/My-personal-coach-app/assets/111835409/842fef03-2029-4455-b552-15888ba8078f)
+
+- Access to a log of past workouts:
+<img width="1438" alt="Screen Shot 2024-02-07 at 11 39 23 AM" src="https://github.com/jimenasalinas/My-personal-coach-app/assets/111835409/cd4a2273-069c-4d56-a9c2-2d1dcb706edd">
+
+
+
+
 # Rails Template
 
 This is a base Ruby on Rails repository configured for learning with Codespaces (and Gitpod).
@@ -48,7 +69,10 @@ We've added additional Ruby gems and other software that aren't automatically av
 - Redis
 - Yarn
 
+
 ### VS Code extensions:
 - aliariff.vscode-erb-beautify
 - mbessey.vscode-rufo
 - vortizhe.simple-ruby-erb
+
+
