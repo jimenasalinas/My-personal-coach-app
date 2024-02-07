@@ -1,6 +1,6 @@
 # My PersonAI Coach
 
-- User's can track their goals, the number of days left until their goal target date, and the workout they have completed:
+- User's can track their goals, the number of days left until their goal target date, and the number of workouts they have completed:
 <img width="1435" alt="Screen Shot 2024-02-07 at 11 38 59 AM" src="https://github.com/jimenasalinas/My-personal-coach-app/assets/111835409/97f1bc82-d335-450f-ae31-02561522098a">
 
 - Edit and add new goals:
